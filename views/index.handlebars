@@ -10,9 +10,14 @@
   {{!-- <link rel="stylesheet" href="../../public/assets/css/style.css" type="text/css"> --}}
 </head>
 
+<button class="btn waves-effect waves-light btn-large center" type="submit" name="action">
+  <i class="material-icons right">Add Burger</i>
+</button>
+
 <body <div class="row purple darken-1 center">
   <h2>Burgers that are safe!</h2>
   </div>
+
   <center>
     <div class="row purple darken-1">
       {{#each burgers}}
@@ -61,9 +66,7 @@
               <span>safe</span>
             </label>
           </p>
-          <button class="btn waves-effect waves-light btn-large center" type="submit" name="action">
-            <i class="material-icons right">Add Burger</i>
-          </button>
+
         </form>
   </center>
   </div>
