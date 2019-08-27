@@ -7,15 +7,15 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="./assets/js/burger.js"></script>
-  <link rel="stylesheet" href="../../public/assets/css/style.css" type="text/css">
+  {{!-- <link rel="stylesheet" href="../../public/assets/css/style.css" type="text/css"> --}}
 </head>
 
 
-<div class="container">
+<div class="card-panel purple darken-1">
   <h2>Burgers that are safe!</h2>
 </div>
 
-<div class="container">
+<div class="card-panel purple darken-1">
   {{#each burgers}}
   {{#unless devoured}}
   {{> burgers/burger-block devoured=true}}
@@ -23,11 +23,11 @@
   {{/each}}
 </div>
 
-<div class="container">
+<div class="card-panel purple darken-1">
   <h2>Burgers that have been devoured!</h2>
 </div>
 
-<div class="container">
+<div>
   {{#each burgers}}
   {{#if devoured}}
   {{> burgers/burger-block devoured=false}}
@@ -35,13 +35,13 @@
   {{/each}}
 </div>
 
-<div class="container">
+<div class="card-panel purple darken-1">
   <h2>Create a burger</h2>
 </div>
 
 <div class="row">
   <center>
-    <form class="col m6">
+    <form class="col m6 create-form">
       <div class="input-field inline">
         <input id="ca" type="text" class="validate">
         <label for="text_inline">Please type a Burger Name:</label>
@@ -60,12 +60,13 @@
             <span>safe</span>
           </label>
         </p>
-        <button class="btn waves-effect waves-light" type="submit" name="burger_name">
+        <button class="btn waves-effect waves-light" type="submit" <br></button>name="burger_name">
           <i class="material-icons right">Add Burger</i>
         </button>
       </form>
   </center>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 {{!-- <form class="create-form">
 
   <div class="form-group">

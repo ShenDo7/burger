@@ -1,8 +1,8 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
 console.log("WORKING!")
-$(document).ready(function(){
-console.log("BURGERS JS WORKING")
-  $(".change-devour").on("click", function(event) {
+$(document).ready(function () {
+  console.log("BURGERS JS WORKING")
+  $(".change-devour").on("click", function (event) {
     console.log("CLICKED!")
     event.preventDefault()
     var id = $(this).attr("data-id");
@@ -19,7 +19,7 @@ console.log("BURGERS JS WORKING")
       type: "PUT",
       data: newDevouredState
     }).then(
-      function() {
+      function () {
         console.log("changed devoure to", newDevoure);
         // Reload the page to get the updated list
         location.reload();
@@ -27,7 +27,7 @@ console.log("BURGERS JS WORKING")
     );
   });
 
-  $(".create-form").on("submit", function(event) {
+  $(".create-form").on("submit", function (event) {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
 
@@ -41,7 +41,7 @@ console.log("BURGERS JS WORKING")
       type: "POST",
       data: newburger
     }).then(
-      function() {
+      function () {
         console.log("created new burger");
         // Reload the page to get the updated list
         location.reload();
@@ -49,14 +49,14 @@ console.log("BURGERS JS WORKING")
     );
   });
 
-  $(".delete-burger").on("click", function(event) {
+  $(".delete-burger").on("click", function (event) {
     var id = $(this).data("id");
 
     // Send the DELETE request.
     $.ajax("/api/burgers/" + id, {
       type: "DELETE"
     }).then(
-      function() {
+      function () {
         console.log("deleted burger", id);
         // Reload the page to get the updated list
         loburgerion.reload();
@@ -64,4 +64,4 @@ console.log("BURGERS JS WORKING")
     );
   });
 })
-  
+
