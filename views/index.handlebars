@@ -10,36 +10,7 @@
   {{!-- <link rel="stylesheet" href="../../public/assets/css/style.css" type="text/css"> --}}
 </head>
 
-<button class="btn waves-effect waves-light btn-large center" type="submit" name="action">
-  <i class="material-icons right">Add Burger</i>
-</button>
-
-<body <div class="row purple darken-1 center">
-  <h2>Burgers that are safe!</h2>
-  </div>
-
-  <center>
-    <div class="row purple darken-1">
-      {{#each burgers}}
-      {{#unless devoured}}
-      {{> burgers/burger-block devoured=true}}
-      {{/unless}}
-      {{/each}}
-    </div>
-
-    <div class="row purple darken-1">
-      <h2>Burgers that have been devoured!</h2>
-    </div>
-
-    <div class="row purple darken-1">
-      {{#each burgers}}
-      {{#if devoured}}
-      {{> burgers/burger-block devoured=false}}
-      {{/if}}
-      {{/each}}
-    </div>
-
-    <div class="row purple darken-1 center">
+<div class="row purple darken-1 center">
       <h2>Create a burger</h2>
     </div>
 
@@ -66,7 +37,36 @@
               <span>safe</span>
             </label>
           </p>
+          <button class="btn waves-effect waves-light btn-large center" type="submit" name="action">
+            <i class="material-icons right">Add Burger</i>
+          </button>
 
+<body <div class="row purple darken-1 center">
+  <h2>Burgers that are safe!</h2>
+  </div>
+
+  <center>
+    <div class="row purple darken-1">
+      {{#each burgers}}
+      {{#unless devoured}}
+      {{> burgers/burger-block devoured=true}}
+      {{/unless}}
+      {{/each}}
+    </div>
+
+    <div class="row purple darken-1">
+      <h2>Burgers that have been devoured!</h2>
+    </div>
+
+    <div class="row purple darken-1">
+      {{#each burgers}}
+      {{#if devoured}}
+      {{> burgers/burger-block devoured=false}}
+      {{/if}}
+      {{/each}}
+    </div>
+
+    
         </form>
   </center>
   </div>
