@@ -11,11 +11,11 @@
 </head>
 
 
-<div class="container purple darken-1 center">
+<div class="row purple darken-1 center">
   <h2>Burgers that are safe!</h2>
 </div>
 
-<div class="container purple darken-1">
+<div class="row purple darken-1">
   {{#each burgers}}
   {{#unless devoured}}
   {{> burgers/burger-block devoured=true}}
@@ -23,11 +23,11 @@
   {{/each}}
 </div>
 
-<div class="container purple darken-1">
+<div class="row purple darken-1">
   <h2>Burgers that have been devoured!</h2>
 </div>
 
-<div class="container purple darken-1">
+<div class="row purple darken-1">
   {{#each burgers}}
   {{#if devoured}}
   {{> burgers/burger-block devoured=false}}
@@ -35,7 +35,7 @@
   {{/each}}
 </div>
 
-<div class="container purple darken-1">
+<div class="row purple darken-1">
   <h2>Create a burger</h2>
 </div>
 
@@ -44,7 +44,7 @@
     <form class="col m6 create-form">
       <div class="input-field inline">
         <input id="ca" type="text" class="validate">
-        <label for="text_inline"><h3>type a Burger Name:></h3></label>
+        <label for="text_inline"><h4>type a Burger Name:></h4></label>
         <span class="helper-text" data-error="wrong" data-success="right"></span>
       </div>
       <form action="#">
