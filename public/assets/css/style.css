@@ -17,3 +17,12 @@ li {
 .form-group {
   margin-bottom: 5px;
 }
+
+body {
+  align-content: center;
+  background: blue
+}
+
+#header{
+  background: blue
+}
