@@ -10,6 +10,9 @@ app.use(express.static("public"));
 // Parse appliburgerion body as JSON
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+ }
 
 // Set Handlebars.
 var exphbs = require("express-handlebars");
