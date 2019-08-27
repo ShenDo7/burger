@@ -59,7 +59,7 @@ $(document).ready(function () {
       function () {
         console.log("deleted burger", id);
         // Reload the page to get the updated list
-        loburgerion.reload();
+        location.reload();
       }
     );
   });
