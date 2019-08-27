@@ -1,17 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <title>Burgers!</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <script src="https://code.jquery.com/jquery.js"></script>
-  <script src="./assets/js/burger.js"></script>
-  {{!-- <link rel="stylesheet" href="../../public/assets/css/style.css" type="text/css"> --}}
-</head>
 
-<div class="row purple darken-1 center">
-      <h2>Create a burger</h2>
+  <div class="container">
+
+
+
+    <div class="row purple darken-1 center">
+      <h2>Create a Burger</h2>
+      <p>Choose a name for your burger then select devoured if you would like to eat it immedately or safe if you plan to devour that culinary creation at a later time. Then click the Add Burger button.</p>
     </div>
 
     <div class="row purple darken-1">
@@ -24,55 +19,55 @@
           </label>
           <span class="helper-text" data-error="wrong" data-success="devoure it later"></span>
         </div>
-        <form action="#">
-          <p>
-            <label>
-              <input name="devoured" value="1" type="radio" checked />
-              <span>devoured</span>
-            </label>
-          </p>
-          <p>
-            <label>
-              <input name="devoured" value="0" type="radio" />
-              <span>safe</span>
-            </label>
-          </p>
-          <button class="btn waves-effect waves-light btn-large center" type="submit" name="action">
-            <i class="material-icons right">Add Burger</i>
-          </button>
+        <p>
+          <label>
+            <input name="devoured" value="1" type="radio" checked />
+            <span>devoured</span>
+          </label>
+        </p>
+        <p>
+          <label>
+            <input name="devoured" value="0" type="radio" />
+            <span>safe</span>
+          </label>
+        </p>
+        <button class="btn waves-effect waves-light btn-large center" type="submit" name="action">
+          <i class="material-icons right">Add Burger</i>
+        </button>
+      </form>
+    </div>
 
-<body <div class="row purple darken-1 center">
-  <h2>Burgers that are safe!</h2>
+    <div class="row purple darken-1 center">
+      <div class="col s6">
+
+        <h2>Burgers that are safe!</h2>
+
+        <div class="row purple darken-1">
+          {{#each burgers}}
+          {{#unless devoured}}
+          {{> burgers/burger-block devoured=true}}
+          {{/unless}}
+          {{/each}}
+        </div>
+      </div>
+      <div class="col s6">
+
+        <h2>Burgers that have been devoured!</h2>
+
+        <div class="row purple darken-1">
+          {{#each burgers}}
+          {{#if devoured}}
+          {{> burgers/burger-block devoured=false}}
+          {{/if}}
+          {{/each}}
+        </div>
+      </div>
+
+
+    </div>
   </div>
 
-  <center>
-    <div class="row purple darken-1">
-      {{#each burgers}}
-      {{#unless devoured}}
-      {{> burgers/burger-block devoured=true}}
-      {{/unless}}
-      {{/each}}
-    </div>
 
-    <div class="row purple darken-1">
-      <h2>Burgers that have been devoured!</h2>
-    </div>
-
-    <div class="row purple darken-1">
-      {{#each burgers}}
-      {{#if devoured}}
-      {{> burgers/burger-block devoured=false}}
-      {{/if}}
-      {{/each}}
-    </div>
-
-    
-        </form>
-  </center>
-  </div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
-</body>
 {{!-- <form class="create-form">
 
   <div class="form-group">
