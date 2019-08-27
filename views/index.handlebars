@@ -10,65 +10,65 @@
   {{!-- <link rel="stylesheet" href="../../public/assets/css/style.css" type="text/css"> --}}
 </head>
 
-<body 
-
-
-<div class="row purple darken-1 center">
+<body <div class="row purple darken-1 center">
   <h2>Burgers that are safe!</h2>
-</div>
+  </div>
 
-<div class="row purple darken-1">
-  {{#each burgers}}
-  {{#unless devoured}}
-  {{> burgers/burger-block devoured=true}}
-  {{/unless}}
-  {{/each}}
-</div>
+  <div class="row purple darken-1">
+    {{#each burgers}}
+    {{#unless devoured}}
+    {{> burgers/burger-block devoured=true}}
+    {{/unless}}
+    {{/each}}
+  </div>
 
-<div class="row purple darken-1">
-  <h2>Burgers that have been devoured!</h2>
-</div>
+  <div class="row purple darken-1">
+    <h2>Burgers that have been devoured!</h2>
+  </div>
 
-<div class="row purple darken-1">
-  {{#each burgers}}
-  {{#if devoured}}
-  {{> burgers/burger-block devoured=false}}
-  {{/if}}
-  {{/each}}
-</div>
+  <div class="row purple darken-1">
+    {{#each burgers}}
+    {{#if devoured}}
+    {{> burgers/burger-block devoured=false}}
+    {{/if}}
+    {{/each}}
+  </div>
 
-<div class="row purple darken-1">
-  <h2>Create a burger</h2>
-</div>
+  <div class="row purple darken-1">
+    <h2>Create a burger</h2>
+  </div>
 
-<div class="row purple darken-1">
-  <center>
-    <form class="col m6 create-form">
-      <div class="input-field inline">
-        <input id="ca" type="text" class="validate">
-        <label for="text_inline"><h4>type a Burger Name:></h4></label>
-        <span class="helper-text" data-error="wrong" data-success="right"></span>
-      </div>
-      <form action="#">
-        <p>
-          <label>
-            <input name="devoured" value="1" type="radio" checked />
-            <span>devoured</span>
+  <div class="row purple darken-1">
+    <center>
+      <form class="col m6 create-form">
+        <div class="input-field inline">
+          <input id="ca" type="text" class="validate">
+          <label for="text_inline">
+            <h4>type a Burger Name:></h4>
           </label>
-        </p>
-        <p>
-          <label>
-            <input name="devoured" value="0" type="radio" />
-            <span>safe</span>
-          </label>
-        </p>
-        <button class="btn waves-effect waves-light btn-large" type="submit" name="action">
-          <i class="material-icons right">Add Burger</i>
-        </button>
-      </form>
-  </center>
-</div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+          <span class="helper-text" data-error="wrong" data-success="right"></span>
+        </div>
+        <form action="#">
+          <p>
+            <label>
+              <input name="devoured" value="1" type="radio" checked />
+              <span>devoured</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input name="devoured" value="0" type="radio" />
+              <span>safe</span>
+            </label>
+          </p>
+          <button class="btn waves-effect waves-light btn-large" type="submit" name="action">
+            <i class="material-icons right">Add Burger</i>
+          </button>
+        </form>
+    </center>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
 </body>
 {{!-- <form class="create-form">
 
