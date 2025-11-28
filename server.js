@@ -1,31 +1,31 @@
-var express = require("express");
+const express = require("express");
+const { engine } = require("express-handlebars");
 
-var PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8080;
 
-var app = express();
+const app = express();
 
-// Serve static content for the app from the "public" directory in the appliburgerion directory.
+// Serve static content for the app from the "public" directory
 app.use(express.static("public"));
 
-// Parse appliburgerion body as JSON
+// Parse application body as JSON
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-// Set Handlebars.
-var exphbs = require("express-handlebars");
-
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+// Set up Handlebars
+app.engine("handlebars", engine({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
+app.set("views", "./views");
 
-// Import routes and give the server access to them.
-var routes = require("./controllers/burgersController");
-
+// Import routes and give the server access to them
+const routes = require("./controllers/burgersController");
 app.use(routes);
 
-// Start our server so that it can begin listening to client requests.
-app.listen(PORT, function () {
-  console.log("Server listening on: http://localhost:" + PORT);
+// Start our server so that it can begin listening to client requests
+app.listen(PORT, () => {
+  console.log(`Server listening on: http://localhost:${PORT}`);
 });

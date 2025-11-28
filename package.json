@@ -1,30 +1,29 @@
 {
   "name": "burger",
   "version": "1.0.0",
-  "description": "",
+  "description": "A burger ordering application using MySQL and Express",
   "main": "server.js",
-  "dependencies": {
-    "express": "^4.17.1",
-    "express-handlebars": "^3.1.0",
-    "heroku": "^7.29.0"
-  },
-  "overrides": {
-    "node-forge": "^1.3.0"
-  },
-  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "dev": "node --watch server.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ShenDo7/burger.git"
   },
-  "keywords": [],
+  "keywords": ["burger", "mysql", "express"],
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/ShenDo7/burger/issues"
   },
-  "homepage": "https://github.com/ShenDo7/burger#readme"
+  "homepage": "https://github.com/ShenDo7/burger#readme",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "express": "^4.21.0",
+    "express-handlebars": "^8.0.0",
+    "mysql2": "^3.11.0"
+  }
 }
